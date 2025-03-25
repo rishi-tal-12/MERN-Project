@@ -12,7 +12,14 @@ console.log(req.path,req.method)
 next()
 })
 
-app.use(cors())
+const cors = require("cors");
+
+app.use(cors({
+  origin: "https://mern-project-frontend-chi.vercel.app/", 
+  methods: "GET,POST,PUT,DELETE",
+  credentials: true
+}));
+
 
 app.use('/api/blogs',blogs)
 mongoose.connect(process.env.MONGO)
