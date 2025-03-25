@@ -5,22 +5,19 @@ const blogs = require('./routes/blogs')
 const cors = require("cors")
 const app =express()
 
+
+app.use(cors({
+    origin: "https://mern-project-frontend-ce5j66avc-rishi-tal-12s-projects.vercel.app",  
+    methods: "GET,POST,PATCH,DELETE",
+    credentials: true
+}));
+
 app.use(express.json())
 
 app.use((req,res,next)=>{
 console.log(req.path,req.method)
 next()
 })
-
-
-
-app.use(cors({
-    origin: "*",  
-    methods: "GET,POST,PATCH,DELETE",
-    credentials: true
-}));
-
-
 
 app.use('/api/blogs',blogs)
 mongoose.connect(process.env.MONGO)
