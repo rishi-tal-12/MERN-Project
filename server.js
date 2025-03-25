@@ -7,7 +7,7 @@ const app =express()
 
 
 app.use(cors({
-    origin: "https://mern-project-frontend-ce5j66avc-rishi-tal-12s-projects.vercel.app",  
+    origin: "*",  
     methods: "GET,POST,PATCH,DELETE",
     credentials: true
 }));
