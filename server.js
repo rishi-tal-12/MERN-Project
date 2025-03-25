@@ -12,7 +12,6 @@ console.log(req.path,req.method)
 next()
 })
 
-const cors = require("cors");
 
 app.use(cors({
   origin: "https://mern-project-frontend-chi.vercel.app/", 
