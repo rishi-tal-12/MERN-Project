@@ -13,11 +13,13 @@ next()
 })
 
 
+
 app.use(cors({
-  origin: "https://mern-project-frontend-chi.vercel.app", 
-  methods: "GET,POST,PATCH,DELETE",
-  credentials: true
+    origin: "*",  
+    methods: "GET,POST,PATCH,DELETE",
+    credentials: true
 }));
+
 
 
 app.use('/api/blogs',blogs)
